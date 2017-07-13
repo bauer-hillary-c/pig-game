@@ -36,6 +36,26 @@ document.querySelector('.btn-roll').addEventListener('click', function() {
     roundScore += dice;
     document.querySelector('#current-' + activePlayer).textContent = roundScore;
   } else {
+    nextPlayer();
+  }
+});
+
+
+document.querySelector('.btn-hold').addEventListener('click', function() {
+  // Add CURRENT score to GLOBAL score
+  scores[activePlayer] += roundScore;
+
+  // Update UI
+  document.querySelector('#score-' + activePlayer).textContent = scores[activePlayer];
+  // Check if player won
+  if (scores[activePlayer] >= 100) {
+    document.write('winner!');
+  } else {
+    nextPlayer();
+  }
+});
+
+function nextPlayer() {
     document.getElementById('current-' + activePlayer).textContent = '0';
     activePlayer === 0 ? activePlayer = 1 : activePlayer = 0;
     roundScore = 0;
@@ -43,11 +63,8 @@ document.querySelector('.btn-roll').addEventListener('click', function() {
     document.querySelector('.player-0-panel').classList.toggle('active');
     document.querySelector('.player-1-panel').classList.toggle('active');
 
-    document.querySelector('.dice').style.display = 'none'; 
-  }
-});
-
-
+    document.querySelector('.dice').style.display = 'none';
+}
 
 /*
 
