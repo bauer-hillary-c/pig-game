@@ -16,5 +16,10 @@ roundScore = 0;
 activePlayer = 0;
 
 dice = Math.floor(Math.random() * 6) + 1;
-console.log(dice);
 
+document.querySelector('#current-' + activePlayer).textContent = dice;
+// document.querySelector('#current-' + activePlayer).innerHTML = dice --another way to write the above line so you can pass in html
+
+// var x = document.querySelector('#score-1').textContent; --how to read the textContent
+
+document.querySelector('.dice').style.display = 'none';
