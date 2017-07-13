@@ -9,17 +9,31 @@ GAME RULES:
 
 */
 
-var scores, roundScore, activePlayer, dice;
+var scores, roundScore, activePlayer;
 
 scores = [0,0];
 roundScore = 0;
 activePlayer = 0;
 
-dice = Math.floor(Math.random() * 6) + 1;
-
-document.querySelector('#current-' + activePlayer).textContent = dice;
-// document.querySelector('#current-' + activePlayer).innerHTML = dice --another way to write the above line so you can pass in html
-
-// var x = document.querySelector('#score-1').textContent; --how to read the textContent
-
 document.querySelector('.dice').style.display = 'none';
+
+document.querySelector('.btn-roll').addEventListener('click', function() {
+  // 1. Radndom number
+  var dice = Math.floor(Math.random() * 6) + 1;
+
+  // 2. Display the results
+  var diceDOM = document.querySelector('.dice');
+  diceDOM.style.display = 'block';
+  diceDOM.src = 'dice-' + dice + '.png';
+
+  // 3. Update the round score IF the rooled number was NOT a 1
+});
+
+
+
+/*
+document.querySelector('#current-' + activePlayer).textContent = dice;
+document.querySelector('#current-' + activePlayer).innerHTML = dice --another way to write the above line so you can pass in html
+
+var x = document.querySelector('#score-1').textContent; --how to read the textContent
+*/
