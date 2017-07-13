@@ -17,6 +17,9 @@ activePlayer = 0;
 
 document.querySelector('.dice').style.display = 'none';
 
+document.getElementById('score-' + activePlayer).textContent = '0';
+document.getElementById('current-' + activePlayer).textContent = '0';
+
 document.querySelector('.btn-roll').addEventListener('click', function() {
   // 1. Radndom number
   var dice = Math.floor(Math.random() * 6) + 1;
