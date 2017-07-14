@@ -14,7 +14,7 @@ var scores, roundScore, activePlayer, gameActive;
 
 document.querySelector('.btn-roll').addEventListener('click', function() {
   if(gameActive) {
-    // 1. Radndom number
+    // 1. Random number
     var dice = Math.floor(Math.random() * 6) + 1;
 
     // 2. Display the results
@@ -41,7 +41,7 @@ document.querySelector('.btn-hold').addEventListener('click', function() {
     // Update UI
     document.querySelector('#score-' + activePlayer).textContent = scores[activePlayer];
     // Check if player won
-    if (scores[activePlayer] >= 10) {
+    if (scores[activePlayer] >= 100) {
       document.getElementById('name-' + activePlayer).textContent = 'WINNER!';
       document.querySelector('.dice').style.display = 'none';
       document.querySelector('.btn-roll').disabled = true;
@@ -94,10 +94,3 @@ function init() {
   document.querySelector('.btn-roll').disabled = false;
   document.querySelector('.btn-hold').disabled = false;
 }
-
-/*
-
-document.querySelector('#current-' + activePlayer).innerHTML = dice --another way to write the above line so you can pass in html
-
-var x = document.querySelector('#score-1').textContent; --how to read the textContent
-*/
