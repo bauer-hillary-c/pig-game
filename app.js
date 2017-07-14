@@ -41,6 +41,8 @@ document.querySelector('.btn-hold').addEventListener('click', function() {
   if (scores[activePlayer] >= 10) {
     document.getElementById('name-' + activePlayer).textContent = 'WINNER!';
     document.querySelector('.dice').style.display = 'none';
+    document.querySelector('.btn-roll').disabled = true;
+    document.querySelector('.btn-hold').disabled = true;
     document .querySelector('.player-' + activePlayer + '-panel').classList.add('winner');
     document .querySelector('.player-' + activePlayer + '-panel').classList.remove('active');
   } else {
@@ -81,6 +83,9 @@ function init() {
   document .querySelector('.player-0-panel').classList.remove('active');
   document .querySelector('.player-1-panel').classList.remove('active');
   document .querySelector('.player-0-panel').classList.add('active');
+
+  document.querySelector('.btn-roll').disabled = false;
+  document.querySelector('.btn-hold').disabled = false;
 }
 
 /*

@@ -45,6 +45,11 @@ body {
     padding: 100px;
 }
 
+button:disabled,
+button[disabled]{
+  color: #cccccc;
+}
+
 
 
 /**********************************************
