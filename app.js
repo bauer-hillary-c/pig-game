@@ -49,7 +49,7 @@ document.querySelector('.btn-hold').addEventListener('click', function() {
   document.querySelector('#score-' + activePlayer).textContent = scores[activePlayer];
   // Check if player won
   if (scores[activePlayer] >= 100) {
-    document.write('winner!');
+    document.getElementById('name-' + activePlayer).textContent = 'WINNER!';
   } else {
     nextPlayer();
   }
